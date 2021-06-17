@@ -5,7 +5,7 @@ COPY . .
 
 RUN go build -v
 
-FROM busybox:uclibc
+FROM scratch
 
 WORKDIR /go/src/app
 
