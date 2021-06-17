@@ -1,4 +1,4 @@
 CREATE TABLE people (
-  "id" varchar primary key,
-  "name" varchar not null 
+  id VARCHAR(32) PRIMARY KEY,
+  name VARCHAR(64) NOT NULL 
 );
