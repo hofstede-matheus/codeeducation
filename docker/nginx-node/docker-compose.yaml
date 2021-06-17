@@ -5,7 +5,13 @@ services:
       build: 
         context: ./node
       container_name: node
-      entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
+      entrypoint: dockerize -wait tcp://db:3306 -timeout 20s node src/index.js
+      environment: 
+        - API_PORT=3000
+        - DATABASE_HOST=db
+        - DATABASE_USER=root
+        - DATABASE_PASSWORD=root
+        - DATABASE_NAME=challenge
       networks: 
         - node-network
       tty: true
