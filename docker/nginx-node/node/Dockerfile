@@ -1,7 +1,7 @@
 FROM node:15.14.0-alpine3.10
 WORKDIR /usr/src/app
 
-RUN apt-get update && apt-get install -y wget
+RUN apk add --no-cache wget
 
 ENV DOCKERIZE_VERSION v0.6.1
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
